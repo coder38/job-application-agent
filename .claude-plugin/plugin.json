@@ -10,13 +10,14 @@
   "homepage": "https://github.com/coder38/job-application-agent",
   "repository": "https://github.com/coder38/job-application-agent",
   "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/coder38/job-application-agent/blob/main/PRIVACY.md",
+  "supportUrl": "https://github.com/coder38/job-application-agent/issues",
   "keywords": [
     "job-search",
     "resume",
     "career",
     "job-applications",
     "ats",
-    "h1b",
     "human-in-the-loop"
   ]
 }
