@@ -120,6 +120,10 @@ More examples:
 ## Privacy and data handling
 
 - The plugin itself collects nothing and sends nothing anywhere. It has no servers, analytics, telemetry, hooks, or background processes.
+- **Where your information goes, and only through tools you already use in Claude:**
+  - *Job boards and web search* receive search terms: target titles, skills, and location. Your resume is not sent to them.
+  - *Employers' application forms* (company career pages and applicant-tracking systems such as Workday, Greenhouse, and Lever) receive the details you approve, such as your name, contact details, and tailored resume, typed into the form only after you approve. You click Submit yourself.
+  - Those sites keep what you submit under their own privacy policies.
 - Your resume and answers stay in your Claude conversation. A profile, saved answers, or tracker is saved **only if you say yes**, and only where your Claude environment supports it (for example a Claude Project or a file you keep).
 - Work authorization and voluntary self-identification answers are left out of saved files unless you choose to include them. Passwords, ID numbers, and financial details are never saved.
 - Referral suggestions use only what the job site already shows you, open at most a few profiles, and never compile information about anyone.

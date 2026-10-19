@@ -31,6 +31,8 @@ Your original resume is never modified.
 
 ## Websites and accounts
 
+- Search terms (target titles, skills, location) go to job boards and web search. Your resume does not.
+- Details you approve (such as your name, contact details, and tailored resume) are typed into an employer's application form only after you approve, and you click Submit yourself. That site keeps what you submit under its own privacy policy.
 - You sign in to job sites yourself. The agent never sees, types, or stores your passwords, never creates accounts, and never completes CAPTCHAs or security checks.
 - The agent never submits an application, sends a message, or makes a connection request on your behalf.
 - It never enters government ID numbers, bank details, or payment information into any form.
