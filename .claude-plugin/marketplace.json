@@ -1,6 +1,6 @@
 {
   "name": "job-application-agent",
-  "description": "Marketplace for the ApplyWise plugin: human-in-the-loop job search, honest resume tailoring, and approval-gated application autofill.",
+  "description": "Marketplace for the RoleHarbor plugin: human-in-the-loop job search, honest resume tailoring, and approval-gated application autofill.",
   "owner": {
     "name": "Aastha Bhatia"
   },

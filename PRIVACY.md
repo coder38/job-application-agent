@@ -1,6 +1,6 @@
 # Privacy
 
-This document explains what the ApplyWise plugin does with your information.
+This document explains what the RoleHarbor plugin does with your information.
 
 ## What the plugin is
 

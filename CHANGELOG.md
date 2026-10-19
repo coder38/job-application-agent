@@ -4,7 +4,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [0.1.0] - 2026-10-19
 
-First release as a Claude plugin, packaging the job-application-agent skill as ApplyWise.
+First release as a Claude plugin, packaging the job-application-agent skill as RoleHarbor.
 
 ### Added
 - Plugin manifest and a one-plugin marketplace so the repository can be installed directly from GitHub.
