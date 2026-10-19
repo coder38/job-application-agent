@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 # Builds the two release downloads from the same source files:
-#   dist/job-application-agent-plugin.zip  -> Claude app: Customize > Plugins > Add > Upload plugin
-#   dist/job-application-agent-skill.zip   -> Claude app: Customize > Skills > Upload a skill
+#   dist/applywise-plugin.zip  -> Claude app: Customize > Plugins > Add > Upload plugin
+#   dist/applywise-skill.zip   -> Claude app: Customize > Skills > Upload a skill
 #
 # Usage (from anywhere):  sh scripts/build-release.sh
 # Requires: zip
@@ -11,8 +11,8 @@ set -eu
 NAME="job-application-agent"
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 DIST_DIR="$ROOT_DIR/dist"
-PLUGIN_ZIP="$DIST_DIR/$NAME-plugin.zip"
-SKILL_ZIP="$DIST_DIR/$NAME-skill.zip"
+PLUGIN_ZIP="$DIST_DIR/applywise-plugin.zip"
+SKILL_ZIP="$DIST_DIR/applywise-skill.zip"
 
 if [ ! -f "$ROOT_DIR/skills/$NAME/SKILL.md" ] || [ ! -f "$ROOT_DIR/.claude-plugin/plugin.json" ]; then
   echo "Error: run this from a checkout of the $NAME repository" >&2

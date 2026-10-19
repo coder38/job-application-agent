@@ -1,4 +1,4 @@
-# Job Application Agent
+# ApplyWise
 
 A Claude plugin that runs a job search the way a careful career coach would: it finds recently posted roles that fit your resume, checks each one against your must-haves (location, work arrangement, job type, pay, and work authorization if it applies to you), tailors your resume to the best match **without inventing anything**, and helps fill the application form **only after you approve**, always stopping before the final Submit click.
 
@@ -82,8 +82,8 @@ To try it for one session without installing: clone the repository and run `clau
 
 ### Claude app (claude.ai web and desktop, including Cowork)
 
-- **As a plugin:** download `job-application-agent-plugin.zip` from the latest release (or build it with `sh scripts/build-release.sh`), then Customize → Plugins → Add → **Upload plugin**. You can also add this GitHub repository as a marketplace under Customize → Plugins.
-- **As a skill only:** download `job-application-agent-skill.zip` from the latest release (or build it the same way), then Customize → Skills → **+** → Create skill → **Upload a skill**. Skills work on every plan, including Free.
+- **As a plugin:** download `applywise-plugin.zip` from the latest release (or build it with `sh scripts/build-release.sh`), then Customize → Plugins → Add → **Upload plugin**. You can also add this GitHub repository as a marketplace under Customize → Plugins.
+- **As a skill only:** download `applywise-skill.zip` from the latest release (or build it the same way), then Customize → Skills → **+** → Create skill → **Upload a skill**. Skills work on every plan, including Free.
 
 On Team and Enterprise plans, an admin may need to allow uploaded plugins or skills.
 
