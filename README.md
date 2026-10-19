@@ -1,6 +1,6 @@
 # Job Application Agent
 
-A Claude plugin that runs a job search the way a careful career coach would: it finds recently posted roles that fit your resume, screens out postings that rule out your work-authorization needs, tailors your resume to the best match **without inventing anything**, and helps fill the application form **only after you approve**, always stopping before the final Submit click.
+A Claude plugin that runs a job search the way a careful career coach would: it finds recently posted roles that fit your resume, checks each one against your must-haves (location, work arrangement, job type, pay, and work authorization if it applies to you), tailors your resume to the best match **without inventing anything**, and helps fill the application form **only after you approve**, always stopping before the final Submit click.
 
 The plugin is a single, carefully structured [skill](skills/job-application-agent/SKILL.md). It adds no servers, hooks, background jobs, or scripts that run on your machine; everything it does happens through tools you already have in Claude (its browser, your connected job-board connectors, web search, and file creation).
 
@@ -11,7 +11,7 @@ The plugin is a single, carefully structured [skill](skills/job-application-agen
 - **Multi-source job search.** LinkedIn, Indeed, Glassdoor, connected job-board connectors (Dice, ZipRecruiter), and company career / ATS pages (Greenhouse, Lever, Workday, Ashby), with duplicates and reposts merged.
 - **Search modes.** *Fast*, *Balanced* (default), and *Deep*. Results start with a coverage line showing exactly what was and wasn't searched.
 - **Freshness first.** Last 48 hours by default, automatically widening to 7 and then 14 days when there are too few good matches, and telling you when it does.
-- **Work-authorization screening.** Each posting is labeled *Sponsors*, *Transfer only*, *No sponsorship*, or *Not stated*, with the employer's own wording. Postings that rule out the visa you need are skipped with the reason.
+- **Optional work-authorization screening.** If you say you need sponsorship, each posting is labeled *Sponsors*, *Transfer only*, *No sponsorship*, or *Not stated*, with the employer's own wording. Postings that rule out what you need are skipped with the reason. If you don't need sponsorship, this step stays out of the way.
 - **Eligibility before fit.** Hard requirements (authorization, licenses, location, job type) are marked Pass / Fail / Unknown; only then are roles ranked by real fit (skills, seniority, domain), with the reasons shown.
 - **Honest gap analysis.** Missing skills, seniority mismatches, and look-alike products (for example two different products from the same vendor) are called out instead of glossed over.
 - **Truthful resume tailoring.** Rewrites your summary, skills, and bullets in the posting's language only where your real experience supports it, checks every title, date, and skill against your original, and presents before/after changes.
@@ -29,7 +29,7 @@ Profile ──► Search (all sources) ──► Screen & rank ──► Pick a 
 ```
 
 1. **Profile.** Only your resume and target roles are required. Work authorization, location, work arrangement, and employment type are asked but skippable (the agent states its defaults); everything else is optional.
-2. **Search and screen.** All sources for the chosen mode, deduplicated, filtered, and sponsorship-checked.
+2. **Search and screen.** All sources for the chosen mode, deduplicated, and filtered against your must-haves.
 3. **Rank and choose.** Eligibility check, explained fit, top pick plus backups; you choose which one to tailor for.
 4. **Tailor and approve.** ATS keyword analysis, before/after resume changes, then a mandatory pause for your approval.
 5. **Apply, with you in control.** The agent builds a one-page resume PDF, opens the application from the posting itself, fills and checks fields, and stops at Submit.
