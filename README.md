@@ -67,14 +67,14 @@ These rules override everything else in the skill:
 This repository is both the plugin and a one-plugin marketplace.
 
 ```bash
-claude plugin marketplace add YOUR-GITHUB-USERNAME/job-application-agent
+claude plugin marketplace add coder38/job-application-agent
 claude plugin install job-application-agent@job-application-agent
 ```
 
 Or from inside a session:
 
 ```
-/plugin marketplace add YOUR-GITHUB-USERNAME/job-application-agent
+/plugin marketplace add coder38/job-application-agent
 /plugin install job-application-agent@job-application-agent
 ```
 
@@ -166,4 +166,4 @@ Bump `version` in `.claude-plugin/plugin.json` with every release so installed c
 
 ## License
 
-License to be added.
+Released under the [MIT License](LICENSE).

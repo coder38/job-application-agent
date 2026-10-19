@@ -84,7 +84,7 @@ Only if no browser tools exist or the attempt fails, say once: "I couldn't reach
 - **Popups:** a sign-in popup can pause the browser in every tab. If a page won't load or a script won't run, ask the user to finish or close it.
 - **Search inputs:** prefer the site's own search box and filters. If you build a search URL, check that the results page title shows the exact keyword and location; if not, fix it before trusting the results.
 - **Location first:** set the location before reading results and confirm the page shows it (LinkedIn otherwise uses the signed-in account's own city). State the location searched.
-- **Specific queries:** target title plus one or two core skills (for example "clinical informatics analyst Epic"). If the first page is mostly off-target, refine the query once instead of reading through it.
+- **Specific queries:** target title plus one or two core skills (for example "backend engineer Python"). If the first page is mostly off-target, refine the query once instead of reading through it.
 - **LinkedIn (signed in):** results load at `/jobs/search-results/`; the job ID is the `currentJobId` value in the address after clicking a result. To read a posting, open `https://www.linkedin.com/jobs/view/<job id>/` and **scroll down before reading**; the description loads only after scrolling. Read from "About the job" to the end.
 - **Glassdoor:** job links must keep `?jl=<job id>`. The same posting can appear under two company names; treat identical descriptions as one posting.
 
