@@ -1,0 +1,21 @@
+{
+  "name": "job-application-agent",
+  "displayName": "Job Application Agent",
+  "version": "0.1.0",
+  "description": "Human-in-the-loop job search assistant: finds recent postings that fit your resume, screens out roles that rule out your visa needs, tailors your resume without inventing anything, and fills application forms only after you approve, always stopping before submit.",
+  "author": {
+    "name": "Aastha Bhatia",
+    "url": "https://github.com/YOUR-GITHUB-USERNAME"
+  },
+  "homepage": "https://github.com/YOUR-GITHUB-USERNAME/job-application-agent",
+  "repository": "https://github.com/YOUR-GITHUB-USERNAME/job-application-agent",
+  "keywords": [
+    "job-search",
+    "resume",
+    "career",
+    "job-applications",
+    "ats",
+    "h1b",
+    "human-in-the-loop"
+  ]
+}

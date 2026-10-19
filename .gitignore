@@ -1,0 +1,34 @@
+# Build output (release ZIPs are attached to GitHub releases, not committed)
+dist/
+*.zip
+*.plugin
+
+# Personal job-search material: never commit resumes, profiles, trackers, or answers
+*.pdf
+*.docx
+*.doc
+*.csv
+*.xlsx
+job-agent-profile.md
+job-applications.*
+*resume*
+*Resume*
+*cover-letter*
+answer-bank*
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+.claude/settings.local.json
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+.vscode/
+.idea/
+*.swp
+*~

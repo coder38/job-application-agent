@@ -1,0 +1,20 @@
+{
+  "name": "job-application-agent",
+  "description": "Marketplace for the Job Application Agent plugin: human-in-the-loop job search, honest resume tailoring, and approval-gated application autofill.",
+  "owner": {
+    "name": "Aastha Bhatia"
+  },
+  "plugins": [
+    {
+      "name": "job-application-agent",
+      "source": "./",
+      "description": "Find recent jobs that fit your resume, tailor it truthfully, and fill applications only after your approval, stopping before submit.",
+      "category": "productivity",
+      "tags": [
+        "job-search",
+        "resume",
+        "career"
+      ]
+    }
+  ]
+}
