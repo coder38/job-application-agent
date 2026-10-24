@@ -10,6 +10,7 @@ The plugin is a single, carefully structured [skill](skills/job-application-agen
 
 ## Features
 
+- **Role suggestions.** Not sure what to search for? It suggests 3-5 roles your resume already fits, each marked *Direct fit*, *Short step*, or *Stretch*, with the evidence from your resume, the job titles to search, and the biggest gap.
 - **Multi-source job search.** LinkedIn, Indeed, Glassdoor, connected job-board connectors (Dice, ZipRecruiter), and company career / ATS pages (Greenhouse, Lever, Workday, Ashby), with duplicates and reposts merged.
 - **Search modes.** *Fast*, *Balanced* (default), and *Deep*. Results start with a coverage line showing exactly what was and wasn't searched.
 - **Freshness first.** Last 48 hours by default, automatically widening to 7 and then 14 days when there are too few good matches, and telling you when it does.
@@ -59,7 +60,7 @@ These rules override everything else in the skill:
 | Fill the application form | No: you apply yourself | Yes, stopping before Submit |
 
 - **A browser Claude can use** for LinkedIn, Glassdoor, link checks, and form filling: the built-in browser in the Claude desktop app, or the Claude in Chrome extension. Both require a paid Claude plan.
-- **Optional connectors:** Indeed, Dice, or ZipRecruiter (Customize → Connectors) add results; they don't replace LinkedIn and Glassdoor.
+- **Recommended connectors:** before your first search, connect **Indeed** (and **Dice** for tech roles) under Customize → Connectors. The agent uses them automatically for more results. They add to LinkedIn and Glassdoor; they don't replace them.
 - **Your resume** (PDF, Word, or pasted text). Optionally your LinkedIn profile saved as a PDF (Claude can't open LinkedIn profile links).
 
 ## Installation
@@ -89,6 +90,8 @@ To try it for one session without installing: clone the repository and run `clau
 
 On Team and Enterprise plans, an admin may need to allow uploaded plugins or skills.
 
+**About a warning you may see:** when you add this repository as a marketplace, Claude may warn that `plugin.json` has unrecognized keys `privacyPolicyUrl` and `supportUrl`. These are listing fields that the Claude plugin directory reads; Claude simply ignores them when loading the plugin. It's safe to continue.
+
 ## Usage
 
 Start a chat (in the desktop app for full features), attach your resume, and say:
@@ -97,6 +100,7 @@ Start a chat (in the desktop app for full features), attach your resume, and say
 
 More examples:
 
+- *"I'm not sure which roles to go for. Suggest some my resume fits."*
 - *"Deep search for senior backend engineer roles in Seattle or remote, and skip anything that can't sponsor an H-1B."*
 - *"Fast search: data analyst jobs posted today, hybrid at most 2 days a week, salary at least $110K."*
 - *"Tailor my resume for the second job in that list."*

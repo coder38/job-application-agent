@@ -1,6 +1,6 @@
 ---
 name: "job-application-agent"
-description: Finds recently posted jobs that match a user's resume, screens out postings that rule out their visa needs, tailors their resume to the best match without inventing anything, and fills the application form only after they approve, stopping before submit. Use when someone asks to find jobs, tailor a resume to a posting, or apply to a role.
+description: Finds recently posted jobs that match a user's resume and must-haves (including visa sponsorship when needed), suggests roles they could realistically target, tailors their resume to the best match without inventing anything, and fills the application form only after they approve, stopping before submit. Use when someone asks to find jobs, which roles to target, to tailor a resume to a posting, or to apply to a role.
 ---
 
 # Job Application Agent
@@ -23,7 +23,7 @@ Otherwise, ask the questions below in one message, grouped as shown. Say plainly
 
 **Required (cannot search or tailor without these):**
 1. Resume: an uploaded file or pasted text. Optional extra: their LinkedIn profile saved as a PDF. Claude cannot open a LinkedIn profile from a URL, so never ask for the URL. Tell them how to make the PDF: on LinkedIn, open your profile, click **Resources** (or **More**), then **Save to PDF**, and attach the file.
-2. Target roles: job titles and seniority, core tech stack, years of experience. Ask whether they want roles in their current niche only, or broader roles their skills transfer to.
+2. Target roles: job titles and seniority, core tech stack, years of experience. Ask whether they want roles in their current niche only, or broader roles their skills transfer to. Add: "Not sure? Say so and I'll suggest roles your resume already fits." If they take that offer, follow "Suggest roles to target" below before searching.
 
 **Asked, but skippable (state the default you'll use if skipped):**
 3. Work authorization: needs a new H-1B, needs an H-1B transfer, on OPT/STEM OPT, green card, citizen, other. Default if skipped: no sponsorship filter applied, and you say so.
@@ -43,6 +43,21 @@ If the user gives only partial answers, proceed. Before the first search, restat
 **Saving.** After the profile is complete, offer once to save it: as `job-agent-profile.md` in the Project when there is one, otherwise as a downloadable file the user can attach next time. Save only with a yes, and only where the environment actually supports it. Before saving, ask whether to include work authorization and self-identification answers; leave them out unless the user says to include them. Never save passwords, ID numbers, or financial details. Update saved files only when the user confirms a change.
 
 **Master resume stays untouched.** The user's original resume is the master. Every tailored version is a new file named for the role, for example `Firstname_Lastname_Resume_Company.pdf`.
+
+### Suggest roles to target (when the user asks or isn't sure)
+
+Use this when the user asks which roles they could target, says they aren't sure, or wants options beyond their current title. It needs only the resume.
+
+1. **Suggest 3-5 role families** grounded in the resume, from closest to furthest. Include the user's current role family when it still fits, plus adjacent ones their experience transfers to.
+2. **For each, give:**
+   - **Why it fits:** two or three pieces of evidence from the resume (roles, projects, tools, domain), quoted or closely paraphrased. Never assume skills the resume doesn't show.
+   - **How close it is:** **Direct fit** (could apply now; most core requirements already shown), **Short step** (one or two gaps the user could close with study or a project), or **Stretch** (needs a license, certification, clearance, degree, or more years of experience the user doesn't have). Roles that require such a credential are never Direct fit or Short step.
+   - **Search titles:** the 2-3 job titles employers actually use for this role, so searches catch every variant.
+   - **Biggest gap:** the most important missing requirement, stated honestly.
+3. **Demand check (optional):** if the user wants it, or a browser or job-board connector is already in use, run one quick search per role family in the user's location and posting window, and report what you saw (for example "LinkedIn, Chicago, past week: about 40 results"), with the source, location, and date. Never invent counts, salaries, or market trends; if you didn't check, say so.
+4. **Let the user choose.** Ask which role families to search. Add the chosen titles to the active profile and restate it in one line. Never switch or add targets on your own later; if results suggest a better-fitting role, mention it once and let the user decide.
+
+Keep this to one short table or list; it supports the search and must not delay it.
 
 ## 2. Discover and screen roles
 
