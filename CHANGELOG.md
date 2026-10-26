@@ -11,6 +11,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - README: recommended connectors (Indeed, Dice) and an explanation of the `privacyPolicyUrl` / `supportUrl` warning.
 
 ### Changed
+- More sources: ZipRecruiter joins the core boards; employer career sites now include the main employers in the user's field and area (for example health systems); specialist boards are chosen per user (Dice, Built In, Wellfound for tech; We Work Remotely, Remotive, Remote.co, FlexJobs for remote; industry and government boards).
 - Broader search: 2-3 job-title variants per site without skills in the query, at least 2 results pages per title, a separate remote search, and no seniority filter unless asked.
 - Posting window: past 7 days on the first search (widening to 14 or 30 days when there are fewer than 5 strong matches), then everything since the last search. Replaces the fixed 48-hour default.
 - Shortlist of up to about 15 matches, all shown with links; the top 3-5 read in full. Removed the 5-minute search target.

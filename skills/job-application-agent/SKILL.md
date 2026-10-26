@@ -65,20 +65,28 @@ Keep this to one short table or list; it supports the search and must not delay 
 
 **Modes.** Default **Balanced**. The user may ask for Fast or Deep; keep their choice for the conversation. Modes change how widely you search, never the eligibility requirements or any safety, truth, or approval rule.
 
-- **Fast:** a focused subset of sources (at least one job board plus company/ATS listings where possible), the main title only, first page of results, shown promptly. List the sources and titles not checked; never claim full coverage.
-- **Balanced:** the source checklist below, searched with 2-3 title variants per source and at least the first 2 pages of results each (see "Search breadth" below), duplicates removed before opening descriptions, and the strongest candidates read thoroughly. A blocked or slow source must not hold up the search: show what you have and offer to finish the skipped sources. Report progress (for example "LinkedIn done, searching Indeed") rather than cutting the search short.
-- **Deep:** every available source in the checklist, all title variants plus adjacent titles, results pages until they stop being relevant, and more exhaustive screening. Respect any time or posting-window limit the user set.
+- **Fast:** the core boards only (at least one, plus company/ATS listings where possible), the main title only, first page of results, shown promptly. List the sources and titles not checked; never claim full coverage.
+- **Balanced:** all core boards and employer sites, plus the 2-3 specialist sources that best fit the user (see the checklist), searched with 2-3 title variants per core board (the main title on specialist sources) and at least the first 2 pages of results each (see "Search breadth" below), duplicates removed before opening descriptions, and the strongest candidates read thoroughly. A blocked or slow source must not hold up the search: show what you have and offer to finish the skipped sources. Report progress (for example "LinkedIn done, searching Indeed") rather than cutting the search short.
+- **Deep:** every source in the checklist that fits the user, all title variants plus adjacent titles, results pages until they stop being relevant, and more exhaustive screening. Respect any time or posting-window limit the user set.
 
-**Source checklist** (Balanced and Deep attempt all of these in the same turn; Fast uses a stated subset):
-1. **LinkedIn Jobs** (browser)
-2. **Indeed** (connector if connected, otherwise the browser at indeed.com)
-3. **Glassdoor** (browser)
-4. **Any other connected job-board connectors** (Dice, ZipRecruiter)
-5. **Web search** for company career sites and ATS pages (Greenhouse, Lever, Workday, Ashby)
+**Source checklist.** Use a connector when one is connected; otherwise use the browser (2b). Choose specialist sources from the user's field and preferences, and name the ones you picked in the profile restatement so the user can add or drop any.
+
+1. **Core job boards** (every Balanced and Deep search):
+   - **LinkedIn Jobs** (browser)
+   - **Indeed** (connector if connected, otherwise indeed.com)
+   - **Glassdoor** (browser)
+   - **ZipRecruiter** (connector if connected, otherwise ziprecruiter.com)
+2. **Employer career sites and ATS pages** (every Balanced and Deep search): use web search to find postings on company career pages and applicant-tracking systems (Workday, Greenhouse, Lever, Ashby, iCIMS, Oracle/Taleo, SuccessFactors, SmartRecruiters). Include the employers that dominate the user's field and area; they often post there first or only. For example, for healthcare and clinical roles, search the career sites of the main health systems and hospitals in the user's area.
+3. **Specialist sources, chosen to fit the user:**
+   - **Tech roles:** Dice (connector if connected, otherwise dice.com), Built In (for its cities and remote listings), Wellfound (startups).
+   - **Remote roles** (when the user is open to remote): We Work Remotely, Remotive, Remote.co, and FlexJobs. FlexJobs shows full details only to paying members: list what's visible without signing in, and use more only if the user signs in to their own account.
+   - **Other fields:** the user's industry or professional-association job board, or government job sites (for example USAJOBS) when relevant. Ask the user if they know one.
+4. **Any other connected job-board connector.**
 
 Rules:
 - Never imply a source was searched unless it was actually queried. Never stop after the first source or wait for the user to ask for the next one.
-- LinkedIn and Glassdoor block automated page fetching and have no Claude connector; they can only be searched through a browser (2b).
+- LinkedIn and Glassdoor block automated page fetching and have no Claude connector; they can only be searched through a browser (2b). The same is true of many specialist boards; if one blocks automated access, skip it and say so.
+- Specialist and remote boards often repost jobs from employers and other boards. Remove the duplicates (2c), and prefer the employer's own posting when you can verify it. Never pay for, subscribe to, or sign up for a board on the user's behalf.
 - If one site needs the user (sign-in, security check), ask once and **keep searching the other sources while you wait**; return when the user says "ready", or mark it skipped. Never wait indefinitely.
 - If a useful job-board connector exists but isn't connected, mention it once.
 - **Start the results with a mode and coverage line**, for example: "Mode: Balanced. Searched: LinkedIn (14), Indeed (9), Glassdoor (skipped: security check, say 'ready' after completing it), web search (3). Titles: Java developer, backend engineer, software engineer. Window: past 7 days."
