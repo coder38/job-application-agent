@@ -13,7 +13,8 @@ The plugin is a single, carefully structured [skill](skills/job-application-agen
 - **Role suggestions.** Not sure what to search for? It suggests 3-5 roles your resume already fits, each marked *Direct fit*, *Short step*, or *Stretch*, with the evidence from your resume, the job titles to search, and the biggest gap.
 - **Multi-source job search.** LinkedIn, Indeed, Glassdoor, connected job-board connectors (Dice, ZipRecruiter), and company career / ATS pages (Greenhouse, Lever, Workday, Ashby), with duplicates and reposts merged.
 - **Search modes.** *Fast*, *Balanced* (default), and *Deep*. Results start with a coverage line showing exactly what was and wasn't searched.
-- **Freshness first.** Last 48 hours by default, automatically widening to 7 and then 14 days when there are too few good matches, and telling you when it does.
+- **Wide, fresh search.** Searches several job-title variants on each site (titles in the search box, your skills used for ranking), goes past the first page, and runs a separate remote search when you're open to remote. The first search covers the past 7 days (widening to 14 or 30 if needed); later searches cover everything posted since your last one, newest first.
+- **Bring your own link.** Found a job yourself? Paste the link and it goes through the same eligibility check, tailoring, and approval. If the search should have found it, the agent says why it didn't and offers to adjust future searches.
 - **Optional work-authorization screening.** If you say you need sponsorship, each posting is labeled *Sponsors*, *Transfer only*, *No sponsorship*, or *Not stated*, with the employer's own wording. Postings that rule out what you need are skipped with the reason. If you don't need sponsorship, this step stays out of the way.
 - **Eligibility before fit.** Hard requirements (authorization, licenses, location, job type) are marked Pass / Fail / Unknown; only then are roles ranked by real fit (skills, seniority, domain), with the reasons shown.
 - **Honest gap analysis.** Missing skills, seniority mismatches, and look-alike products (for example two different products from the same vendor) are called out instead of glossed over.
@@ -101,6 +102,7 @@ Start a chat (in the desktop app for full features), attach your resume, and say
 More examples:
 
 - *"I'm not sure which roles to go for. Suggest some my resume fits."*
+- *"Here's a job I found: <link>. Can I apply to it?"*
 - *"Deep search for senior backend engineer roles in Seattle or remote, and skip anything that can't sponsor an H-1B."*
 - *"Fast search: data analyst jobs posted today, hybrid at most 2 days a week, salary at least $110K."*
 - *"Tailor my resume for the second job in that list."*

@@ -6,9 +6,14 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 - Role suggestions: when a user isn't sure what to target, the agent suggests 3-5 role families grounded in their resume, each rated Direct fit, Short step, or Stretch, with evidence, search titles, the biggest gap, and an optional demand check.
+- Postings the user brings: pasted job links go through the same eligibility, tailoring, and approval steps, with a note on why the search missed them.
+- Search log in the tracker, so repeat searches cover everything since the last one.
 - README: recommended connectors (Indeed, Dice) and an explanation of the `privacyPolicyUrl` / `supportUrl` warning.
 
 ### Changed
+- Broader search: 2-3 job-title variants per site without skills in the query, at least 2 results pages per title, a separate remote search, and no seniority filter unless asked.
+- Posting window: past 7 days on the first search (widening to 14 or 30 days when there are fewer than 5 strong matches), then everything since the last search. Replaces the fixed 48-hour default.
+- Shortlist of up to about 15 matches, all shown with links; the top 3-5 read in full. Removed the 5-minute search target.
 - Skill description now leads with must-haves rather than visas, and mentions role suggestions.
 
 ## [0.1.0] - 2026-10-19
