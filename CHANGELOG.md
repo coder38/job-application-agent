@@ -11,6 +11,8 @@ All notable changes to this project are documented here. The format follows [Kee
 - README: recommended connectors (Indeed, Dice) and an explanation of the `privacyPolicyUrl` / `supportUrl` warning.
 
 ### Changed
+- The agent works as an expert in the user's field (titles, platforms, certifications, what hiring managers look for) when searching, judging fit, and tailoring.
+- Resume standards: accomplishment-formula bullets with real metrics, a three-sentence summary, exact certification names and status, a filler-word list to cut, and ATS-friendly formatting.
 - More sources: ZipRecruiter joins the core boards; employer career sites now include the main employers in the user's field and area (for example health systems); specialist boards are chosen per user (Dice, Built In, Wellfound for tech; We Work Remotely, Remotive, Remote.co, FlexJobs for remote; industry and government boards).
 - Broader search: a search plan with a full title family (5-10 titles in Balanced, for example Epic analyst, EHR analyst, clinical applications analyst), platform keywords searched on their own (for example Epic, Guidewire, Salesforce), at least 2 results pages per search, a separate remote search, and no seniority filter unless asked.
 - Matching judges the job's responsibilities, skills, and platforms rather than its title; well-fitting titles found in results are added to the search plan.
