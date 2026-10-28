@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [0.1.1] - Unreleased
+## [0.1.1] - 2026-10-28
 
 ### Added
 - Role suggestions: when a user isn't sure what to target, the agent suggests 3-5 role families grounded in their resume, each rated Direct fit, Short step, or Stretch, with evidence, search titles, the biggest gap, and an optional demand check.
