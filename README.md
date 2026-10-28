@@ -158,10 +158,19 @@ job-application-agent/
 │   └── marketplace.json     # Lets this repo act as its own marketplace
 ├── skills/
 │   └── job-application-agent/
-│       └── SKILL.md         # The agent's instructions (single source of truth)
+│       ├── SKILL.md         # Core workflow, approval pauses, truth and safety rules
+│       └── references/      # Detailed steps, loaded only when needed
+│           ├── search.md            # Sources, search plan, browser, screening
+│           ├── role-suggestions.md  # Suggesting roles to target
+│           ├── resume-standards.md  # Resume writing standards
+│           ├── applying.md          # Building the resume file and filling forms
+│           ├── tracker.md           # Application tracker and search log
+│           ├── referrals.md         # Optional referral suggestions
+│           └── career-intelligence.md  # Optional skill-gap and career advice
 ├── scripts/
 │   └── build-release.sh     # Builds the plugin and skill ZIPs from the same files
 ├── CHANGELOG.md
+├── LICENSE
 ├── PRIVACY.md
 └── README.md
 ```

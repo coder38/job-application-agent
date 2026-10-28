@@ -1,0 +1,85 @@
+# Searching: sources, search plan, browser, and screening
+
+Part of the job-application-agent skill. Read this in full before the first search in a conversation. Section numbers (2a, 2b, 2c, 3, 4) refer to SKILL.md.
+
+## Sources and search plan (2a)
+
+**Modes.** Default **Balanced**. The user may ask for Fast or Deep; keep their choice for the conversation. Modes change how widely you search, never the eligibility requirements or any safety, truth, or approval rule.
+
+- **Fast:** the core boards only (at least one, plus company/ATS listings where possible), the main title only, first page of results, shown promptly. List the sources and titles not checked; never claim full coverage.
+- **Balanced:** all core boards and employer sites, plus the 2-3 specialist sources that best fit the user (see the checklist), searched with the full search plan (see "Search breadth" below: the title family plus platform keywords on core boards; the main titles and keywords on specialist sources) and at least the first 2 pages of results each (see "Search breadth" below), duplicates removed before opening descriptions, and the strongest candidates read thoroughly. A blocked or slow source must not hold up the search: show what you have and offer to finish the skipped sources. Report progress (for example "LinkedIn done, searching Indeed") rather than cutting the search short.
+- **Deep:** every source in the checklist that fits the user, the whole title family, platform keywords, and adjacent role families, results pages until they stop being relevant, and more exhaustive screening. Respect any time or posting-window limit the user set.
+
+**Source checklist.** Use a connector when one is connected; otherwise use the browser (2b). Choose specialist sources from the user's field and preferences, and name the ones you picked in the profile restatement so the user can add or drop any.
+
+1. **Core job boards** (every Balanced and Deep search):
+   - **LinkedIn Jobs** (browser)
+   - **Indeed** (connector if connected, otherwise indeed.com)
+   - **Glassdoor** (browser)
+   - **ZipRecruiter** (connector if connected, otherwise ziprecruiter.com)
+2. **Employer career sites and ATS pages** (every Balanced and Deep search): use web search to find postings on company career pages and applicant-tracking systems (Workday, Greenhouse, Lever, Ashby, iCIMS, Oracle/Taleo, SuccessFactors, SmartRecruiters). Include the employers that dominate the user's field and area; they often post there first or only. For example, for healthcare and clinical roles, search the career sites of the main health systems and hospitals in the user's area.
+3. **Specialist sources, chosen to fit the user:**
+   - **Tech roles:** Dice (connector if connected, otherwise dice.com), Built In (for its cities and remote listings), Wellfound (startups).
+   - **Remote roles** (when the user is open to remote): We Work Remotely, Remotive, Remote.co, and FlexJobs. FlexJobs shows full details only to paying members: list what's visible without signing in, and use more only if the user signs in to their own account.
+   - **Other fields:** the user's industry or professional-association job board, or government job sites (for example USAJOBS) when relevant. Ask the user if they know one.
+4. **Any other connected job-board connector.**
+
+Rules:
+- Never imply a source was searched unless it was actually queried. Never stop after the first source or wait for the user to ask for the next one.
+- LinkedIn and Glassdoor block automated page fetching and have no Claude connector; they can only be searched through a browser (2b). The same is true of many specialist boards; if one blocks automated access, skip it and say so.
+- Specialist and remote boards often repost jobs from employers and other boards. Remove the duplicates (2c), and prefer the employer's own posting when you can verify it. Never pay for, subscribe to, or sign up for a board on the user's behalf.
+- If one site needs the user (sign-in, security check), ask once and **keep searching the other sources while you wait**; return when the user says "ready", or mark it skipped. Never wait indefinitely.
+- If a useful job-board connector exists but isn't connected, mention it once.
+- **Start the results with a mode and coverage line**, for example: "Mode: Balanced. Searched: LinkedIn (14), Indeed (9), Glassdoor (skipped: security check, say 'ready' after completing it), web search (3). Titles: Java developer, backend engineer, software engineer. Window: past 7 days."
+
+**Search breadth** (the most common reason good roles are missed is searching too narrowly or matching on exact titles):
+- **Build a search plan before searching, and show it in the profile restatement** so the user can add or remove anything:
+  - **Title family:** every title employers commonly use for the user's work, not just their current title. Include synonyms, platform- or module-specific titles, older and newer names, and common abbreviations. For example, Epic and EHR work is posted as Epic analyst, Epic application analyst, EHR analyst, EHR clinical analyst, clinical applications analyst, clinical systems analyst, clinical informatics analyst, and module titles such as "Epic Ambulatory analyst"; software work as software engineer, software developer, backend engineer, Java developer, and so on. Use the titles from the role suggestions when they were made. Aim for 5-10 in Balanced, and more in Deep.
+  - **Platform keywords:** when the user's core skill is a named platform or product that defines the job (for example Epic, Cerner/Oracle Health, Guidewire, Salesforce, SAP, Workday, ServiceNow), also search that keyword on its own, with no title. This catches roles whatever they're called. Don't search broad skills alone (Python, SQL, Excel); they return too much noise.
+  - **Adjacent role families:** in Deep mode, or when the user wants broader roles, add the role families from the role suggestions.
+- **Search each title and keyword on its own,** without stacking skills onto the query; stacked terms hide postings that word things differently.
+- **Judge matches by the job, not the title.** Decide fit from the posting's responsibilities, required skills, and platforms, never from whether its title matches your list. A posting with an unexpected title stays in if the work fits; a posting with a matching title is dropped if the work doesn't. When results show a well-fitting title you didn't search, add it to the plan, search it too, and tell the user.
+- **Use the sites' related suggestions:** on strong matches, check the site's "similar jobs" or "people also viewed" list for more candidates.
+- **Sort by most recent** and go through at least the first 2 results pages per search (more in Deep), or until results stop being relevant.
+- **Stay efficient:** run platform keywords first, since they catch the most roles. For each further title, if its first results page brings nothing new (only duplicates or off-target roles), skip its second page and move on.
+- **Remote roles:** when the user is open to remote, run a separate remote search on each site as well as the location search; location filters often hide remote postings.
+- **Seniority filters** only if the user asked for a level; site seniority labels are unreliable and drop good matches.
+
+## Working in the browser (2b)
+
+**Find the browser before deciding there isn't one.** Browser tools are often not switched on at the start of a chat. Look through your available and deferred tools (use tool search if you have it) for the built-in browser (names containing `Claude_Browser`, or an `enable` tool for it) or Claude in Chrome (`claude-in-chrome`). If an enable tool exists, call it, then make one real browser call, such as opening LinkedIn Jobs. Never tell the user there is no browser, or ask them to switch apps, before that attempt.
+
+Only if no browser tools exist or the attempt fails, say once: "I couldn't reach a browser in this chat, so I can't search LinkedIn or Glassdoor, open job links to check them, or fill application forms. Both browser options (the built-in browser in the Claude desktop app, and the Claude in Chrome extension) need a paid Claude plan (Pro or higher). On a paid plan, make sure the desktop app is up to date, open, and online, then ask me to try again. Without a browser I'll search job boards and the web, and still tailor your resume; you'll submit applications yourself." Then search what you can.
+
+**Rules once you have a browser:**
+- **One browser for the whole task.** Prefer the built-in browser; otherwise Claude in Chrome. Tell the user which, and do all searching, sign-ins, and form filling there. Don't switch unless the user asks; if they work in a different browser, ask them to continue in yours.
+- **Never touch tabs or tab groups you didn't open.** Close only tabs you opened, and only when nothing of the user's depends on them.
+- **Site access: ask once, for the whole site** (not one page load) for job boards and the employer's application site (for example `linkedin.com`, `indeed.com`, `glassdoor.com`, `myworkdayjobs.com`, `greenhouse.io`). One-page access leaves you reading a stale page after the user acts.
+- **Before asking the user to act in the browser** (sign in, pass a check, close a popup), check whether the browser is visible. If hidden, tell them to press **Cmd+Shift+B** (Mac) or **Ctrl+Shift+B** (Windows) in the desktop app. Say exactly what to do, wait for "ready", then **reload the page before judging it**; never conclude "not signed in" from a page loaded before they acted.
+- **Sign-ins are the user's.** Ask them to sign in to Glassdoor once before searching it (signed-in sessions trigger far fewer security checks).
+- **Security checks** ("Humans only", "Just a moment...", "Verify you are human", CAPTCHAs): ask the user to complete them, or skip that site and say so.
+- **Popups:** a sign-in popup can pause the browser in every tab. If a page won't load or a script won't run, ask the user to finish or close it.
+- **Search inputs:** prefer the site's own search box and filters. If you build a search URL, check that the results page title shows the exact keyword and location; if not, fix it before trusting the results.
+- **Location first:** set the location before reading results and confirm the page shows it (LinkedIn otherwise uses the signed-in account's own city). State the location searched.
+- **Queries:** one title or platform keyword per search, from the search plan in 2a. If a page is mostly off-target, try the next title or keyword instead of stacking extra words onto the query.
+- **LinkedIn (signed in):** results load at `/jobs/search-results/`; the job ID is the `currentJobId` value in the address after clicking a result. To read a posting, open `https://www.linkedin.com/jobs/view/<job id>/` and **scroll down before reading**; the description loads only after scrolling. Read from "About the job" to the end.
+- **Glassdoor:** job links must keep `?jl=<job id>`. The same posting can appear under two company names; treat identical descriptions as one posting.
+
+## Window, duplicates, filters, and reading (2c)
+
+1. **Posting window.** Use the user's window if they set one ("only today's", "past month"); never widen past it. Otherwise:
+   - **First search** (no earlier search in this conversation or the tracker's search log): **past 7 days**, a filter every major job site offers. After the mode's sources have been attempted, if fewer than 5 strong matches pass all filters, widen to 14 days, then 30, and say so in one line (for example "Only 2 strong matches in the past week, widened to 14 days").
+   - **Repeat searches:** everything posted **since the last search**, using the smallest site filter that covers that gap (past 24 hours, 3 days, week, or month), so nothing is missed in between. Leave out roles already in the tracker as before.
+   - Always sort newest first and show each posting's age, so fresh roles stand out; applying early helps.
+2. **Duplicates and reposts.** Merge results across sites and remove duplicates; the same vacancy often appears on several boards. Treat a posting as already seen if its requisition ID, exact URL, or company + title + location + description matches one earlier in the conversation or in the tracker, even if the site labels it new. Mark postings labeled "Reposted". Keep the original source and job ID, and prefer the employer's own careers link when verified.
+3. **Filters:** the work itself (responsibilities, skills, platforms, seniority), location, arrangement, employment type, compensation floor, exclusions. Titles alone never decide a match (see "Search breadth" in 2a). Skip roles whose actual work is clearly outside the target (for example QA, product owner, sales, people manager) unless the user asked for them.
+4. **Skim everything, shortlist generously, read the best in full.** From the results pages (title, company, location, salary, posted date), build a shortlist of every plausible match, up to about 15. Then read the whole description of the top candidates, up to the profile's number (default 3-5), to the very end; sponsorship, salary, and location rules usually sit at the bottom. Read more if those fail the checks, and read any shortlisted posting the user picks. Never judge eligibility from titles or snippets; mark unread ones "Not read yet" instead of dropping them.
+5. **Sponsorship** (when the user needs sponsorship or a transfer). Use exactly these labels everywhere (results table, tracker, reports), and keep the employer's exact wording or a faithful short excerpt with the source link:
+   - **Sponsors:** the posting says it will sponsor ("will consider sponsoring", "sponsorship available"). Rank above otherwise-equal postings.
+   - **Transfer only:** accepts H-1B transfers but not new petitions. Passes only for users who need a transfer.
+   - **No sponsorship:** the posting rules it out ("unable to sponsor", "no H-1B", "US citizens/green card only", "must be authorized without sponsorship now or in the future"). Skip it and log: "Skipping job: Listing explicitly states H1B sponsorship is unavailable."
+   - **Not stated:** silence. It passes, marked unverified; silence is neither acceptance nor rejection.
+
+   Distinguish current authorization from future sponsorship. Don't assume past sponsorship means current willingness. Flag ambiguous wording for verification without contacting the employer unless the user approves. Give no immigration-law conclusions beyond what the posting says.
+6. **Links must work.** Never build, guess, or shorten a job URL; use only links copied exactly from a page or tool result you opened in this session. Prefer the permanent form: `https://www.linkedin.com/jobs/view/<job id>/`, `https://www.indeed.com/viewjob?jk=<job key>`, Glassdoor's `.../job-listing/...htm?jl=<job id>`, or the company's careers page. Remove only tracking parameters (`trackingId`, `refId`, `eBP`, `utm_*`, `position`, `pageNum`); **always keep the job's identifying parameter** (`jk=`, `jl=`, `gh_jid=`). Avoid redirect, ad, short, and click-tracking links (`/rc/clk`, `/pagead/`, `/clk?`, `to.indeed.com/...`); they expire. **Indeed connector:** never pass on its short links; use its job-details tool to get the job key or the employer's apply link, and use the key exactly as returned. Open every link before listing it; if it fails or redirects to a search page, find the direct posting or careers page. **If you cannot open links** (no browser, or the site blocks fetching), mark each one "Not verified" and also give the company and exact job title, plus the careers page if web search finds one.
+7. **Results table:** role (linked), company, location and arrangement, posting age (for example "20 hours", "Reposted 5 hours ago"), source, salary if listed, sponsorship label, eligibility (section 3), status (Selected / Backup / Skipped and why / Not read yet). State the window, titles, and location searched. Every shortlisted posting appears in the table with its link, including those not read yet, so the user can see and pick from all of them.

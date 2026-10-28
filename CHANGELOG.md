@@ -11,6 +11,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - README: recommended connectors (Indeed, Dice) and an explanation of the `privacyPolicyUrl` / `supportUrl` warning.
 
 ### Changed
+- Skill split into a lean core (workflow, approval pauses, truth and safety rules) and reference files loaded only when needed, cutting what loads on every use from about 6,700 to about 2,600 words. No change in behavior.
 - The agent works as an expert in the user's field (titles, platforms, certifications, what hiring managers look for) when searching, judging fit, and tailoring.
 - Resume standards: accomplishment-formula bullets with real metrics, a three-sentence summary, exact certification names and status, a filler-word list to cut, and ATS-friendly formatting.
 - More sources: ZipRecruiter joins the core boards; employer career sites now include the main employers in the user's field and area (for example health systems); specialist boards are chosen per user (Dice, Built In, Wellfound for tech; We Work Remotely, Remotive, Remote.co, FlexJobs for remote; industry and government boards).
