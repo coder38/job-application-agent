@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Added
 - H-1B sponsorship history: when the user needs sponsorship or a transfer, the agent looks up each shortlisted employer's past H-1B filings (U.S. Department of Labor LCA data, via sites such as Ellis or MyVisaJobs), labels it Frequent sponsor, Occasional sponsor, No filings found, or Unknown employer with counts and source, and uses it to rank eligible postings. A posting's own "no sponsorship" statement still decides.
+- Current-restrictions check: for likely sponsors in tech, IT services, or consulting, a quick news search flags PERM or H-1B suspensions and federal investigations, with date and source.
+
+### Changed
+- Sponsorship checks run only for US jobs when the user needs a new H-1B or transfer, so users in other countries or without sponsorship needs spend no extra time or tokens. The work-authorization question adapts to the country being searched.
 
 ## [0.1.1] - 2026-10-28
 
