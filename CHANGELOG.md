@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - Unreleased
+
+### Added
+- H-1B sponsorship history: when the user needs sponsorship or a transfer, the agent looks up each shortlisted employer's past H-1B filings (U.S. Department of Labor LCA data, via sites such as Ellis or MyVisaJobs), labels it Frequent sponsor, Occasional sponsor, No filings found, or Unknown employer with counts and source, and uses it to rank eligible postings. A posting's own "no sponsorship" statement still decides.
+
 ## [0.1.1] - 2026-10-28
 
 ### Added

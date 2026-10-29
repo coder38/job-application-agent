@@ -5,7 +5,7 @@ Part of the job-application-agent skill. Read this before creating, reading, or 
 Keep one application tracker per user so nothing is applied to twice and follow-ups are easy.
 
 - **Where:** reuse the user's existing tracker (a spreadsheet artifact, a Project document, or a file they attach). Otherwise offer to create one: a spreadsheet artifact if the environment offers one, else `job-applications.csv` that the user keeps and attaches next time. Create it only with a yes.
-- **Columns:** Date added, Company, Role, Location, Arrangement, Link, Job ID, Source, Sponsorship, Eligibility, Resume file, Status, Date applied, Next step / follow-up date, Notes (decision log and contacts). Optional where supported: search mode, last checked open, recruiter response date, interview date, outcome reason.
+- **Columns:** Date added, Company, Role, Location, Arrangement, Link, Job ID, Source, Sponsorship, H-1B history, Eligibility, Resume file, Status, Date applied, Next step / follow-up date, Notes (decision log and contacts). Optional where supported: search mode, last checked open, recruiter response date, interview date, outcome reason.
 - **Status values:** Considering, Skipped (reason), Ready to submit, Applied, Interviewing, Offer, Rejected, Withdrawn.
 - **When to write:**
   - After the results table: add the selected role and backups as Considering. Add skipped roles only if the user wants them logged.

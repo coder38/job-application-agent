@@ -1,7 +1,7 @@
 {
   "name": "job-application-agent",
   "displayName": "RoleHarbor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Human-in-the-loop job search assistant: finds recently posted jobs that match your resume, checks each one against your must-haves, tailors your resume without inventing anything, and fills application forms only after you approve, always stopping before submit.",
   "author": {
     "name": "Aastha Bhatia",
