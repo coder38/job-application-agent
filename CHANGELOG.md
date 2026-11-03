@@ -11,6 +11,12 @@ All notable changes to this project are documented here. The format follows [Kee
 - Ghost-job and stale-posting detection: each shortlisted posting is labeled Likely active, Check before applying, or Likely stale from signals already on the page (age, reposts, evergreen wording, closed on the employer's site), with a layoffs or hiring-freeze check for the top pick only.
 - Daily digest: with the user's OK, a scheduled task checks every morning for jobs posted since the last search and lists only new strong matches. It never tailors, applies, or contacts anyone.
 - `resume-checker` plugin agent: a lightweight checker with one read-only tool and a fast model, used for the truth check when available.
+- Job-alert emails as a source when a mail connector is connected; daily digests use them when no browser is available.
+- Vendor-side titles (implementation, solutions and consultant roles) in the search plan for platform specialists.
+- Degree-risk flag: for H-1B users, postings whose minimum is below a bachelor's degree are flagged and ranked lower. Internal roles at the current employer are labeled Internal move.
+- Form filling: education and certifications are checked first after resume autofill, and a progress note on long forms lets an interrupted application resume.
+- Tracker: employer calls and emails are marked Action needed and listed first.
+- `tests/scenarios.md`: 14 hand-run test scenarios drawn from real use (not part of the package).
 - Includes everything from the unreleased 0.1.2 below.
 
 ### Changed
