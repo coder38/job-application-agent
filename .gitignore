@@ -11,8 +11,14 @@ dist/
 *.xlsx
 job-agent-profile.md
 job-applications.*
-*resume*
-*Resume*
+*resume*.pdf
+*resume*.docx
+*resume*.doc
+*resume*.txt
+*Resume*.pdf
+*Resume*.docx
+*Resume*.doc
+*Resume*.txt
 # ...except the skill's own reference files
 !skills/job-application-agent/references/*.md
 *cover-letter*
