@@ -24,7 +24,7 @@ rm -f "$PLUGIN_ZIP" "$SKILL_ZIP"
 
 # Plugin ZIP: plugin files at the top level of the archive (no wrapper folder).
 (cd "$ROOT_DIR" && zip -qr "$PLUGIN_ZIP" \
-  .claude-plugin skills README.md PRIVACY.md CHANGELOG.md \
+  .claude-plugin agents skills README.md PRIVACY.md CHANGELOG.md \
   $( [ -f LICENSE ] && echo LICENSE ) \
   -x "*.DS_Store")
 

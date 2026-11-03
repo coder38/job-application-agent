@@ -19,7 +19,9 @@ The plugin is a single, carefully structured [skill](skills/job-application-agen
 - **Eligibility before fit.** Hard requirements (authorization, licenses, location, job type) are marked Pass / Fail / Unknown; only then are roles ranked by real fit (skills, seniority, domain), with the reasons shown.
 - **Honest gap analysis.** Missing skills, seniority mismatches, and look-alike products (for example two different products from the same vendor) are called out instead of glossed over.
 - **Truthful resume tailoring, written like a field expert.** Rewrites your summary, skills, and bullets in the posting's language only where your real experience supports it, using results-first bullets with real numbers and no filler words, checks every title, date, and skill against your original, and presents before/after changes.
-- **Independent truth check.** Before you see a tailored resume, a separate check compares every line against your original resume and your confirmed answers, and flags anything unsupported (using a fresh helper agent where Claude can launch one).
+- **Independent truth check.** Before you see a tailored resume, a separate check compares every line against your original resume and your confirmed answers, and flags anything unsupported (using the plugin's lightweight checker agent where Claude can run it).
+- **Ghost-job detection.** Each shortlisted posting is labeled *Likely active*, *Check before applying*, or *Likely stale* (long-open, repeatedly reposted, evergreen wording, or closed on the employer's own site), so you don't waste applications.
+- **Daily digest.** Optionally, a scheduled check every morning lists only new strong matches posted since your last search.
 - **Approval gate.** Nothing is filled in until you reply **Approved**.
 - **Careful form filling.** You attach the resume (ideally with the site's "Autofill with resume"), then the agent checks and fixes fields, asks all screening questions in one message, and stops before Submit.
 - **Application tracker.** Optional spreadsheet or CSV that prevents duplicate applications and tracks follow-ups. A job is marked *Applied* only when you say so.
@@ -157,6 +159,8 @@ job-application-agent/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin manifest
 │   └── marketplace.json     # Lets this repo act as its own marketplace
+├── agents/
+│   └── resume-checker.md    # Lightweight truth-check agent (fast model, read-only)
 ├── skills/
 │   └── job-application-agent/
 │       ├── SKILL.md         # Core workflow, approval pauses, truth and safety rules
@@ -165,6 +169,9 @@ job-application-agent/
 │           ├── role-suggestions.md  # Suggesting roles to target
 │           ├── resume-standards.md  # Resume writing standards
 │           ├── applying.md          # Building the resume file and filling forms
+│           ├── resume-check.md      # Truth check for tailored resumes
+│           ├── parallel-lookups.md  # Parallel helper lookups in Deep mode
+│           ├── daily-digest.md      # Scheduled daily digest of new matches
 │           ├── tracker.md           # Application tracker and search log
 │           ├── referrals.md         # Optional referral suggestions
 │           └── career-intelligence.md  # Optional skill-gap and career advice

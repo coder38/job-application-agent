@@ -8,7 +8,13 @@ All notable changes to this project are documented here. The format follows [Kee
 - Independent resume check: after tailoring, a fresh helper agent that sees only the master resume, the user's confirmed answers, the posting, and the draft flags unsupported skills, invented numbers, inflated scope, and fact mismatches before the user sees the draft. Falls back to a line-by-line self-check where helper agents aren't available.
 - Parallel lookups in Deep mode: employer career sites, connector searches, and H-1B history and news checks run in parallel helper agents, while the lead agent keeps all browser work, user interaction, and approvals. Falls back to sequential lookups elsewhere.
 - Hidden-employer check: recruiter posts for unnamed clients are flagged when their details point to the user's current or former employer or an excluded company.
+- Ghost-job and stale-posting detection: each shortlisted posting is labeled Likely active, Check before applying, or Likely stale from signals already on the page (age, reposts, evergreen wording, closed on the employer's site), with a layoffs or hiring-freeze check for the top pick only.
+- Daily digest: with the user's OK, a scheduled task checks every morning for jobs posted since the last search and lists only new strong matches. It never tailors, applies, or contacts anyone.
+- `resume-checker` plugin agent: a lightweight checker with one read-only tool and a fast model, used for the truth check when available.
 - Includes everything from the unreleased 0.1.2 below.
+
+### Changed
+- Lower token use: the truth check defaults to the lightweight plugin agent or a self-check (a full general-purpose helper only on request); pages are read selectively (result lists and job descriptions only); 3 postings are read in full by default instead of 3-5.
 
 ## [0.1.2] - Unreleased (folded into 0.2.0)
 

@@ -8,8 +8,11 @@ The agent that wrote the draft is the worst judge of it: it remembers why each c
 
 ## How to run it
 
-- **If you can launch a helper agent** (a tool such as Agent or Task is available), launch one fresh helper with the brief below. Give it only: the master resume, the user's confirmed answers from this conversation (quoted), the job posting text, and the tailored draft. Don't give it your reasoning, the search results, or the conversation. Use a fast, low-cost model if the tool lets you choose.
-- **Otherwise,** run the same check yourself, line by line, as if you had not written the draft.
+Pick the cheapest option that's available, in this order:
+
+1. **The plugin's `resume-checker` agent** (when this skill runs as part of the RoleHarbor plugin and you can launch helper agents). It has the brief below built in, one read-only tool, and a fast model, so it costs little. Give it only the four inputs: the master resume, the user's confirmed answers from this conversation (quoted), the job posting text, and the tailored draft. Don't give it your reasoning, the search results, or the conversation.
+2. **Otherwise, check it yourself,** line by line against the brief below, as if you had not written the draft. Everything you need is already in context, so this adds little cost.
+3. **A general-purpose helper agent** with the brief below, only when the user asks for a fully independent check (for example "double-check this independently"). It's more independent than a self-check but much more expensive, because a fresh general agent loads every tool it might use.
 
 One check per draft. If you revise the draft after the user's feedback, re-check only the lines that changed.
 
