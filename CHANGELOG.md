@@ -2,7 +2,15 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [0.1.2] - Unreleased
+## [0.2.0] - Unreleased
+
+### Added
+- Independent resume check: after tailoring, a fresh helper agent that sees only the master resume, the user's confirmed answers, the posting, and the draft flags unsupported skills, invented numbers, inflated scope, and fact mismatches before the user sees the draft. Falls back to a line-by-line self-check where helper agents aren't available.
+- Parallel lookups in Deep mode: employer career sites, connector searches, and H-1B history and news checks run in parallel helper agents, while the lead agent keeps all browser work, user interaction, and approvals. Falls back to sequential lookups elsewhere.
+- Hidden-employer check: recruiter posts for unnamed clients are flagged when their details point to the user's current or former employer or an excluded company.
+- Includes everything from the unreleased 0.1.2 below.
+
+## [0.1.2] - Unreleased (folded into 0.2.0)
 
 ### Added
 - H-1B sponsorship history: when the user needs sponsorship or a transfer, the agent looks up each shortlisted employer's past H-1B filings (U.S. Department of Labor LCA data, via sites such as Ellis or MyVisaJobs), labels it Frequent sponsor, Occasional sponsor, No filings found, or Unknown employer with counts and source, and uses it to rank eligible postings. A posting's own "no sponsorship" statement still decides.
