@@ -4,7 +4,39 @@
 
 A Claude plugin that runs a job search the way a careful career coach would: it finds recently posted roles that fit your resume, checks each one against your must-haves (location, work arrangement, job type, pay, and work authorization if it applies to you), tailors your resume to the best match **without inventing anything**, and helps fill the application form **only after you approve**, always stopping before the final Submit click.
 
-The plugin is a single, carefully structured [skill](skills/job-application-agent/SKILL.md). It adds no servers, hooks, background jobs, or scripts that run on your machine; everything it does happens through tools you already have in Claude (its browser, your connected job-board connectors, web search, and file creation).
+The plugin is one carefully structured [skill](skills/job-application-agent/SKILL.md) plus a small [truth-check agent](agents/resume-checker.md). It adds no servers, hooks, or scripts that run on your machine; everything it does happens through tools you already have in Claude (its browser, your connectors, web search, and file creation).
+
+---
+
+## Why RoleHarbor
+
+Most job agents optimize for volume: hundreds of auto-submitted applications with keyword-stuffed resumes. Recruiters spot those, and one invented skill can end an interview. RoleHarbor optimizes for **fewer, stronger applications you can defend in every interview.**
+
+| | Mass-apply tools | RoleHarbor |
+| --- | --- | --- |
+| **Resume** | Keyword-stuffed or generic | Tailored per job, then checked line by line against your real resume by a **separate agent** that never saw the reasoning behind the draft |
+| **Numbers** | Often padded or invented | Only real figures; it asks for your reviews or project write-ups to find them, and never fills gaps with "realistic" placeholders |
+| **Submitting** | Automatic | **Never.** It fills the form after you reply "Approved" and stops before Submit |
+| **Which jobs** | Exact-title keyword matches | The whole title family, vendor-side titles, your core platform on its own, and your job-alert emails; judged by the work, not the title |
+| **Dead ends** | Applies anyway | Flags ghost jobs, stale reposts, roles that rule out sponsorship, and roles whose degree minimum is an H-1B risk |
+| **Visa sponsorship** | Rarely considered | Reads each posting's wording **and** the employer's public H-1B filing history, plus, for tech and consulting employers, recent government actions against them |
+| **Interview** | You find out what your resume claims | Lists only tools you can explain, and gives you a one-line answer for anything an interviewer may probe (title differences, gaps) |
+
+These rules come with hand-run [test scenarios](tests/scenarios.md) drawn from people using RoleHarbor for their own job search.
+
+## What a result looks like
+
+*Illustrative example with a fictional employer.*
+
+> **Mode:** Balanced. **Searched:** LinkedIn (14), Indeed (9), Glassdoor (6), employer sites (4), job-alert emails (3). **Window:** since your last search (2 days).
+>
+> | Role | Company | Posted | Freshness | Sponsorship | H-1B history | Eligibility |
+> | --- | --- | --- | --- | --- | --- | --- |
+> | Senior Platform Engineer | Northwind Insurance | 20 hours | Likely active | Not stated | Frequent sponsor (FY2025) | Pass |
+> | Integration Architect | Contoso Health | 3 days | Check before applying (reposted twice) | Sponsors | Occasional sponsor | Pass |
+> | Application Developer | Fabrikam | 5 days | Likely active | No sponsorship: skipped | — | Fail |
+>
+> **Truth check on your tailored resume:** 3 issues found and fixed ("designed" changed to "enhanced" to match your original; one unsupported tool removed; one estimated metric removed). **ATS keywords:** 14 of 17 present; missing: microservices, Kafka, TDD (not in your experience, so not added).
 
 ---
 
@@ -18,10 +50,13 @@ The plugin is a single, carefully structured [skill](skills/job-application-agen
 - **Optional work-authorization screening.** If you say you need sponsorship, each posting is labeled *Sponsors*, *Transfer only*, *No sponsorship*, or *Not stated*, with the employer's own wording. Postings that rule out what you need are skipped with the reason. It also checks each shortlisted employer's past H-1B filings (public Department of Labor data) and ranks frequent sponsors higher, while still respecting what each posting says. If you don't need sponsorship, this step stays out of the way.
 - **Eligibility before fit.** Hard requirements (authorization, licenses, location, job type) are marked Pass / Fail / Unknown; only then are roles ranked by real fit (skills, seniority, domain), with the reasons shown.
 - **Honest gap analysis.** Missing skills, seniority mismatches, and look-alike products (for example two different products from the same vendor) are called out instead of glossed over.
-- **Truthful resume tailoring, written like a field expert.** Rewrites your summary, skills, and bullets in the posting's language only where your real experience supports it, using results-first bullets with real numbers and no filler words, checks every title, date, and skill against your original, and presents before/after changes.
+- **Truthful resume tailoring, written like a field expert.** Rewrites your summary, skills, and bullets in the posting's language only where your real experience supports it: results-first bullets in the XYZ format (accomplished X, measured by Y, by doing Z), ordered by impact, real numbers only, no filler or hype words, and nothing you couldn't explain in an interview. Presents before/after changes.
+- **Two-lens review.** Before you see a draft, it is read as an ATS parser (keywords present and missing, formatting a parser would misread) and as a hiring manager skimming hundreds of resumes (what gets skipped, what stops the scroll, yes / maybe / no pile). It reports keyword coverage, never a made-up "ATS score".
 - **Independent truth check.** Before you see a tailored resume, a separate check compares every line against your original resume and your confirmed answers, and flags anything unsupported (using the plugin's lightweight checker agent where Claude can run it).
 - **Ghost-job detection.** Each shortlisted posting is labeled *Likely active*, *Check before applying*, or *Likely stale* (long-open, repeatedly reposted, evergreen wording, or closed on the employer's own site), so you don't waste applications.
+- **Job-alert emails.** With Gmail or Outlook connected, it reads your LinkedIn, Indeed, and Glassdoor alert emails, which often surface roles a keyword search misses.
 - **Daily digest.** Optionally, a scheduled check every morning lists only new strong matches posted since your last search.
+- **Follow-ups that don't slip.** Recruiter calls and emails are marked *Action needed* and listed first, with a draft reply for you to send. Long forms keep a progress note, so an interruption never means starting over.
 - **Approval gate.** Nothing is filled in until you reply **Approved**.
 - **Careful form filling.** You attach the resume (ideally with the site's "Autofill with resume"), then the agent checks and fixes fields, asks all screening questions in one message, and stops before Submit.
 - **Application tracker.** Optional spreadsheet or CSV that prevents duplicate applications and tracks follow-ups. A job is marked *Applied* only when you say so.
@@ -64,7 +99,7 @@ These rules override everything else in the skill:
 | Fill the application form | No: you apply yourself | Yes, stopping before Submit |
 
 - **A browser Claude can use** for LinkedIn, Glassdoor, link checks, and form filling: the built-in browser in the Claude desktop app, or the Claude in Chrome extension. Both require a paid Claude plan.
-- **Recommended connectors:** before your first search, connect **Indeed** (and **Dice** for tech roles) under Customize → Connectors. The agent uses them automatically for more results. They add to LinkedIn and Glassdoor; they don't replace them.
+- **Recommended connectors:** before your first search, connect **Indeed** (and **Dice** for tech roles) under Customize → Connectors, plus **Gmail** or **Outlook** so it can read your job-alert emails and spot recruiter replies. The agent uses them automatically. They add to LinkedIn and Glassdoor; they don't replace them.
 - **Your resume** (PDF, Word, or pasted text). Optionally your LinkedIn profile saved as a PDF (Claude can't open LinkedIn profile links).
 
 ## Installation
@@ -177,6 +212,8 @@ job-application-agent/
 │           └── career-intelligence.md  # Optional skill-gap and career advice
 ├── scripts/
 │   └── build-release.sh     # Builds the plugin and skill ZIPs from the same files
+├── tests/
+│   └── scenarios.md         # Hand-run test scenarios from real use (not packaged)
 ├── CHANGELOG.md
 ├── LICENSE
 ├── PRIVACY.md
