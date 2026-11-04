@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [0.2.0] - Unreleased
+## [0.2.0] - 2026-11-04
 
 ### Added
 - Independent resume check: after tailoring, a fresh helper agent that sees only the master resume, the user's confirmed answers, the posting, and the draft flags unsupported skills, invented numbers, inflated scope, and fact mismatches before the user sees the draft. Falls back to a line-by-line self-check where helper agents aren't available.
@@ -24,7 +24,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ### Changed
 - Lower token use: the truth check defaults to the lightweight plugin agent or a self-check (a full general-purpose helper only on request); pages are read selectively (result lists and job descriptions only); 3 postings are read in full by default instead of 3-5.
 
-## [0.1.2] - Unreleased (folded into 0.2.0)
+## [0.1.2] - Not released separately (folded into 0.2.0)
 
 ### Added
 - H-1B sponsorship history: when the user needs sponsorship or a transfer, the agent looks up each shortlisted employer's past H-1B filings (U.S. Department of Labor LCA data, via sites such as Ellis or MyVisaJobs), labels it Frequent sponsor, Occasional sponsor, No filings found, or Unknown employer with counts and source, and uses it to rank eligible postings. A posting's own "no sponsorship" statement still decides.
