@@ -16,7 +16,9 @@ All notable changes to this project are documented here. The format follows [Kee
 - Degree-risk flag: for H-1B users, postings whose minimum is below a bachelor's degree are flagged and ranked lower. Internal roles at the current employer are labeled Internal move.
 - Form filling: education and certifications are checked first after resume autofill, and a progress note on long forms lets an interrupted application resume.
 - Tracker: employer calls and emails are marked Action needed and listed first.
-- `tests/scenarios.md`: 14 hand-run test scenarios drawn from real use (not part of the package).
+- Resume writing: the XYZ accomplishment formula by name, bullets ordered by impact and grouped under subheads, outcome-based summaries without copied bullets, functional headlines with official titles kept exact, interview-defensible skills only, no repeated facts or verbs, and a one-time ask for supporting material (reviews, project write-ups) to find real numbers. Missing numbers are asked for or marked `[FILL IN]`, never invented.
+- Two-lens review before the draft is shown: an ATS parser check (keywords present and missing, formatting) and a hiring-manager skim (what gets skipped, yes, maybe or no pile). No ATS scores are quoted.
+- `tests/scenarios.md`: 19 hand-run test scenarios drawn from real use (not part of the package).
 - Includes everything from the unreleased 0.1.2 below.
 
 ### Changed
