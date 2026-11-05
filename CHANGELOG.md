@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [0.2.1] - Unreleased
 
 ### Changed
+- Fixable-gap alert: as soon as a gap the user can close on their own (a skill, tool, or self-registered exam) appears in 3 or more relevant postings, the agent says so once with effort, cost and a first step, and separately names gaps only an employer can close (such as sponsored certifications). The full Career Intelligence Report stays on request. Test scenario 21 added.
 - Every tailored resume is built from the master resume plus a running list of confirmed facts, never by editing a previous tailored version, so one job's keywords and certificates don't accumulate across applications. Test scenario 20 added.
 
 ## [0.2.0] - 2026-11-04
