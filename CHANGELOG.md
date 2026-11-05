@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
+## [0.2.1] - Unreleased
+
+### Changed
+- Every tailored resume is built from the master resume plus a running list of confirmed facts, never by editing a previous tailored version, so one job's keywords and certificates don't accumulate across applications. Test scenario 20 added.
+
 ## [0.2.0] - 2026-11-04
 
 ### Added

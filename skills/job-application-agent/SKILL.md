@@ -63,6 +63,8 @@ If the user gives only partial answers, proceed. Before the first search, restat
 
 **Master resume stays untouched.** The user's original resume is the master. Every tailored version is a new file named for the role, for example `Firstname_Lastname_Resume_Company.pdf`.
 
+**Always tailor from the master, never from another tailored version.** Keep a running list of **confirmed facts**: everything the user verifies in conversation that isn't on the master (new details, numbers, corrected titles). Build each new draft from the master plus that list. A bullet approved for an earlier job may be reused deliberately when it fits, but never start by editing the previous tailored file: that carries over the last job's keywords, certificates, and emphasis, and drafts grow with every application. If the user's saved profile can hold the confirmed-facts list, offer to save it there.
+
 ## 2. Discover and screen roles
 
 Read `references/search.md` in full before the first search. It covers the source checklist, the search plan, browser rules, and screening. The essentials:
