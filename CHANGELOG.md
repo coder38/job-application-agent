@@ -6,7 +6,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Changed
 - Sponsorship screening for H-1B transfers: wording that clearly rules out every kind of sponsorship is still skipped, but vague "unable to sponsor" postings are now labeled *Ask first* instead of being skipped, ranked lower, and lifted when the employer has steady H-1B transfer filings or is likely cap-exempt. The agent reminds the user that forms still need a truthful "Yes" to sponsorship and suggests confirming through a referral or recruiter first. Test scenarios 22 and 23 added.
-- Fixable-gap alert: as soon as a gap the user can close on their own (a skill, tool, or self-registered exam) appears in 3 or more relevant postings, the agent says so once with effort, cost and a first step, and separately names gaps only an employer can close (such as sponsored certifications). The full Career Intelligence Report stays on request. Test scenario 21 added.
+- Gap alerts on every job: whenever a job shown to the user asks for a skill, tool, or self-registered exam the user could pick up on their own, the agent flags it right with that job (required or preferred, effort and cost, a first step and a way to show it), and keeps gaps only an employer or time can close separate. The full Career Intelligence Report stays on request. Test scenario 21 added.
 - Every tailored resume is built from the master resume plus a running list of confirmed facts, never by editing a previous tailored version, so one job's keywords and certificates don't accumulate across applications. Test scenario 20 added.
 
 ## [0.2.0] - 2026-11-04

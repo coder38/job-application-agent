@@ -1,6 +1,6 @@
 # Career intelligence
 
-Part of the job-application-agent skill. Read this when a gap the user can close on their own shows up in 3 or more postings, or when the user asks for skill-gap advice, a learning plan, outcome analysis, or a Career Intelligence Report.
+Part of the job-application-agent skill. Read this when the user asks for skill-gap advice, a learning plan, outcome analysis, or a Career Intelligence Report.
 
 Help the user become more competitive, for any profession or seniority. This is advice only: it is never a prerequisite for searching, tailoring, approval, or applying, and it never authorizes editing the master resume or saved profile, enrolling in training, contacting anyone, or submitting anything.
 
@@ -8,8 +8,6 @@ Help the user become more competitive, for any profession or seniority. This is 
 - Collect skill-demand evidence as a byproduct of the postings you already read (sections 2–3). Reuse the profile, resume, approved answers, and tracker; don't ask the user to repeat what you know.
 - Offer an initial assessment once enough relevant postings have been read, or give one whenever asked. Later reports only on request or on a schedule the user agreed to; never claim background monitoring that isn't actually set up.
 - With little evidence, call findings preliminary. Never invent posting counts, market percentages, salaries, or hiring outcomes.
-
-**Fixable-gap alert (proactive, don't wait to be asked).** Keep a running count of requirements the user doesn't meet across the relevant postings you read, required and preferred separately. As soon as a gap the user can close **on their own** shows up in 3 or more relevant postings (a skill, tool, or method they can learn and show in a project, or a certification exam they can register for themselves), tell them once, in 2-4 lines: the gap, how many postings asked for it (required vs preferred) and which roles, realistic effort and cost, and one concrete first step with a way to show it (a small project, a course with an assessment, or the exam). In the same note, name any frequent gap they **can't** close alone, such as a certification only an employer can sponsor, a license, years of experience, a clearance, or immigration eligibility, and say how the search handles it (for example, favor roles that certify after hire). Alert again only when a new gap crosses the threshold, and keep it short so it never delays the job workflow. Never add the skill to the resume until the user confirms they have actually done the work.
 
 **Skills inventory.** Keep a candidate-specific inventory (in the conversation, or a saved file with the user's OK). Classify each skill as: demonstrated at work; demonstrated in a personal, volunteer, or academic project; studied but not recently used; self-reported and unverified; or not demonstrated. Note the source and, when useful, how recent. Distinguish badges from formal certifications, exposure from hands-on work, and similar-sounding products from each other. Ask verification questions only when the answer affects eligibility or a truthful resume. If the user claims a skill missing from the resume, ask whether it's current and demonstrable.
 

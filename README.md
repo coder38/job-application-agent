@@ -60,7 +60,7 @@ These rules come with hand-run [test scenarios](tests/scenarios.md) drawn from p
 - **Approval gate.** Nothing is filled in until you reply **Approved**.
 - **Careful form filling.** You attach the resume (ideally with the site's "Autofill with resume"), then the agent checks and fixes fields, asks all screening questions in one message, and stops before Submit.
 - **Application tracker.** Optional spreadsheet or CSV that prevents duplicate applications and tracks follow-ups. A job is marked *Applied* only when you say so.
-- **Fixable-gap alerts.** As soon as a skill or exam you could pick up on your own shows up in 3 or more postings, it tells you once: how many roles ask for it, realistic effort and cost, and a first step. Gaps only an employer can close (such as a sponsored certification) are named separately, and the search favors roles that provide them.
+- **Gap alerts on every job.** When a job asks for a skill, tool, or exam you could pick up on your own, it tells you right with that job: required or preferred, realistic effort and cost, and a first step. Gaps only an employer can close (such as a sponsored certification) are named separately.
 - **Optional extras, only when you ask:** referral suggestions (people the job site already shows you, with draft messages you send yourself), follow-up dates, role-specific interview prep, and a *Career Intelligence Report* with evidence-based skill gaps and a 30/60/90-day plan.
 
 ## How it works
