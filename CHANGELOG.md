@@ -2,7 +2,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow [Semantic Versioning](https://semver.org/).
 
-## [0.2.1] - Unreleased
+## [0.2.2] - 2026-11-13
+
+### Changed
+- Removed the release build script from the repository. The plugin directory accepts scripts only from Verified organizations, and the plugin never used it. Release ZIPs are still attached to each GitHub release.
+
+## [0.2.1] - 2026-11-11
 
 ### Changed
 - Sponsorship screening for H-1B transfers: wording that clearly rules out every kind of sponsorship is still skipped, but vague "unable to sponsor" postings are now labeled *Ask first* instead of being skipped, ranked lower, and lifted when the employer has steady H-1B transfer filings or is likely cap-exempt. The agent reminds the user that forms still need a truthful "Yes" to sponsorship and suggests confirming through a referral or recruiter first. Test scenarios 22 and 23 added.

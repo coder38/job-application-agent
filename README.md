@@ -125,7 +125,7 @@ To try it for one session without installing: clone the repository and run `clau
 
 ### Claude app (claude.ai web and desktop, including Cowork)
 
-- **As a plugin:** download `roleharbor-plugin.zip` from the latest release (or build it with `sh scripts/build-release.sh`), then Customize → Plugins → Add → **Upload plugin**. You can also add this GitHub repository as a marketplace under Customize → Plugins.
+- **As a plugin:** download `roleharbor-plugin.zip` from the latest release, then Customize → Plugins → Add → **Upload plugin**. You can also add this GitHub repository as a marketplace under Customize → Plugins.
 - **As a skill only:** download `roleharbor-skill.zip` from the latest release (or build it the same way), then Customize → Skills → **+** → Create skill → **Upload a skill**. Skills work on every plan, including Free.
 
 On Team and Enterprise plans, an admin may need to allow uploaded plugins or skills.
@@ -211,8 +211,6 @@ job-application-agent/
 │           ├── tracker.md           # Application tracker and search log
 │           ├── referrals.md         # Optional referral suggestions
 │           └── career-intelligence.md  # Optional skill-gap and career advice
-├── scripts/
-│   └── build-release.sh     # Builds the plugin and skill ZIPs from the same files
 ├── tests/
 │   └── scenarios.md         # Hand-run test scenarios from real use (not packaged)
 ├── CHANGELOG.md
@@ -226,7 +224,6 @@ job-application-agent/
 ```bash
 claude plugin validate --strict .            # validate plugin + marketplace
 claude --plugin-dir .                        # try it in a session
-sh scripts/build-release.sh                  # build dist/ plugin and skill ZIPs
 ```
 
 Bump `version` in `.claude-plugin/plugin.json` with every release so installed copies update.
